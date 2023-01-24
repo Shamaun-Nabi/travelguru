@@ -1,7 +1,6 @@
 import React from "react";
 import slider1 from "../../../assets/images/Sajek.png";
 // import slider1 from "../../../assets/images/Sajek.png";
-
 function ContentSlider({ place }) {
   const { placeName, imgURL } = place;
   return (

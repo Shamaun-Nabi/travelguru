@@ -2,7 +2,6 @@ import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 function Navbar() {
-
   return (
     <>
       <div className=" shadow-sm">
@@ -88,7 +87,7 @@ function Navbar() {
                 </svg>
               </button>
               {/* User Profile */}
-              <button
+              {/* <button
                 type="button"
                 className="flex ml-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button"
@@ -102,12 +101,14 @@ function Navbar() {
                   src="https://c4.wallpaperflare.com/wallpaper/691/864/895/women-face-portrait-gray-eyes-wallpaper-preview.jpg"
                   alt="Rounded avatar"
                 />
-              </button>
+              </button> */}
               {/* If no User */}
 
-              {/* <button className=" bg-yellow-300 px-3 w-[50%] rounded-md text-white ml-2">
-                Login
-              </button> */}
+              <NavLink to="/login" className="space-x-2">
+                <button className=" ml-2 flex items-center hover:bg-slate-800 hover:text-white bg-yellow-300 px-3 py-2 transition duration-200 rounded-md text-slate-900">
+                  Login
+                </button>
+              </NavLink>
 
               {/* ************************************* */}
               {/* profile Dropdown */}
