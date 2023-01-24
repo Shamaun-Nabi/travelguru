@@ -4,8 +4,33 @@ import { Autoplay } from "swiper";
 import "swiper/css/bundle";
 import ContentSlider from "./Slider/ContentSlider";
 import { useLocation } from "react-router-dom";
+import slide1 from "../../assets/images/Sajek.png";
+import slide2 from "../../assets/images/Sreemongol.png";
+import slide3 from "../../assets/images/sundorbon.png";
 
 function RightContent() {
+  const placesView = [
+    {
+      id: 1,
+      placeName: "সাজেক",
+      imgURL: slide1,
+    },
+    {
+      id: 2,
+      placeName: "শ্রীমঙ্গল",
+      imgURL: slide2,
+    },
+    {
+      id: 3,
+      placeName: "সুন্দরবন",
+      imgURL: slide3,
+    },
+    {
+      id: 4,
+      placeName: "সুন্দরবন",
+      imgURL: slide2,
+    },
+  ];
   return (
     <Swiper
       breakpoints={{
@@ -37,30 +62,11 @@ function RightContent() {
       // onSlideChange={() => console.log("slide change")}
       // onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ContentSlider />
-      </SwiperSlide>
+      {placesView.map((place) => (
+        <SwiperSlide key={place.id}>
+          <ContentSlider place={place} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
