@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css/bundle";
 import ContentSlider from "./Slider/ContentSlider";
+import { useLocation } from "react-router-dom";
 
 function RightContent() {
   return (
@@ -33,8 +34,8 @@ function RightContent() {
         disableOnInteraction: false,
       }}
       loop={true}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <ContentSlider />

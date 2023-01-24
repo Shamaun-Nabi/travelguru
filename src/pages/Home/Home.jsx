@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHref, useLocation } from "react-router-dom";
 import LeftContent from "./LeftContent";
 import RightContent from "./RightContent";
 
 export default function Home() {
+  let { pathname } = useLocation();
+  console.log(pathname);
   return (
     <>
       <div className="mx-auto container ">

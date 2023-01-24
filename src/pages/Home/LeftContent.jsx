@@ -1,5 +1,6 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 function LeftContent() {
   return (
@@ -16,9 +17,11 @@ function LeftContent() {
             deleniti?
           </p>
           <div className="flex justify-center md:justify-start">
-            <button className="mt-3 hover:-translate-y-1 hover:scale-110 flex items-center  gap-x-1 hover:bg-slate-800 hover:text-white bg-yellow-300 px-3 py-2 transition duration-200 rounded-md text-slate-900">
-              Booking Now <BsArrowRightShort />
-            </button>
+            <NavLink to="/booking">
+              <button className="mt-3 hover:-translate-y-1 hover:scale-110 flex items-center  gap-x-1 hover:bg-slate-800 hover:text-white bg-yellow-300 px-3 py-2 transition duration-200 rounded-md text-slate-900">
+                Booking Now <BsArrowRightShort />
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
