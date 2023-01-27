@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import { AuthProvider } from "../../contexts/AuthContext";
 function Login() {
+  const { authInfo } = useContext(AuthProvider);
+  const { signInWithGoogle } = authInfo;
   return (
     <>
-      <div className="mx-auto container h-screen md:h-auto">
+      <div className="mx-auto container h-screen md:h-auto ">
         <div className="">
           <section className=" ">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto">
-              <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto ">
+              <div className="w-full  bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 ">
                 <div className="p-6 space-y-2 md:space-y-6 sm:p-8">
                   <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Sign in to your account
                   </h1>
-                  <form className="space-y-4 md:space-y-6" action="#">
+                  <form className="space-y-8 md:space-y-4  " action="#">
                     <div>
                       <label
                         htmlFor="email"
@@ -21,12 +25,12 @@ function Login() {
                         Your email
                       </label>
                       <input
+                        required
                         type="email"
                         name="email"
                         id="email"
                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="name@company.com"
-                        required=""
                       />
                     </div>
                     <div>
@@ -42,7 +46,7 @@ function Login() {
                         id="password"
                         placeholder="••••••••"
                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required=""
+                        required
                       />
                     </div>
                     <div className="flex items-center justify-between">
@@ -80,17 +84,20 @@ function Login() {
                     </button>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       Don’t have an account yet?{" "}
-                      <a
-                        href="#"
+                      <Link
+                        to="/signIn"
                         className="font-medium b text-primary-600 hover:underline dark:text-primary-500"
                       >
                         Sign up
-                      </a>
+                      </Link>
                     </p>
                   </form>
                 </div>
-                <div className="w-full flex justify-center mb-3">
-                  <button className="bg-slate-300 flex justify-center items-center gap-x-1 w-[80%] rounded-md p-2 shadow-md hover:bg-slate-800 hover:text-white ">
+                <div className="w-full flex justify-center mb-5">
+                  <button
+                    onClick={signInWithGoogle}
+                    className="bg-slate-300 flex justify-center items-center gap-x-1 w-[80%] rounded-md p-2 shadow-md hover:bg-slate-800 hover:text-white "
+                  >
                     <FcGoogle />
                     <span> Sign in With Google</span>
                   </button>

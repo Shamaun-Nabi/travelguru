@@ -59,7 +59,7 @@ function Navbar() {
                 </div>
                 <input
                   type="text"
-                  id="search-navbar"
+                  id="search-navbar-md"
                   className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-300 focus:border-yellow-300 dark:bg-gray-700"
                   placeholder="Search Your Place. . . . ."
                 />
@@ -182,7 +182,7 @@ function Navbar() {
                 </div>
                 <input
                   type="text"
-                  id="search-navbar"
+                  id="search-navbar-sm"
                   className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
                   placeholder="Search..."
                 />

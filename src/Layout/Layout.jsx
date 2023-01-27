@@ -7,7 +7,7 @@ function Layout() {
 
   return (
     <div
-      className="md:h-screen bg-center bg-no-repeat bg-cover relative "
+      className="h-auto md:h-screen bg-center bg-no-repeat bg-cover relative "
       style={{ backgroundImage: `url(https://i.postimg.cc/cCRqJmVK/bg.png)` }}
     >
       <div className="shadow-bg w-full h-full bg-[#000000c2]  ">

@@ -4,8 +4,6 @@ import LeftContent from "./LeftContent";
 import RightContent from "./RightContent";
 
 export default function Home() {
-  let { pathname } = useLocation();
-  console.log(pathname);
   return (
     <>
       <div className="mx-auto container ">
