@@ -5,7 +5,7 @@ import "./index.css";
 import "flowbite";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routers/Routes";
-import AuthContext from "./contexts/AuthContext";
+import 'tw-elements';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

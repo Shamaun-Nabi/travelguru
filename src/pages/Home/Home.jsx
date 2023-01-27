@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useHref, useLocation } from "react-router-dom";
+import React from "react";
 import LeftContent from "./LeftContent";
 import RightContent from "./RightContent";
 

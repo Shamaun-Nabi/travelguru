@@ -4,7 +4,6 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 
 function Layout() {
-
   return (
     <div
       className="h-auto md:h-screen bg-center bg-no-repeat bg-cover relative "

@@ -5,8 +5,10 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import confetti from "canvas-confetti";
 
 export const AuthProvider = createContext();
 
@@ -21,12 +23,29 @@ function AuthContext({ children }) {
       .then((result) => {
         const user = result.user;
         navigate("/");
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
 
         // setLoginUser(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+      });
+  };
+
+  const googleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        setLoginUser(null);
+        navigate("/");
+      })
+      .catch((error) => {
+        // An error happened.
       });
   };
 
@@ -43,13 +62,11 @@ function AuthContext({ children }) {
       }
     });
   }, []);
-  console.log(loginUser);
+  //   console.log(loginUser);
 
-  const authInfo = { signInWithGoogle, loginUser };
+  const authInfo = { signInWithGoogle, loginUser, googleSignOut };
   return (
-    <AuthProvider.Provider value={{ authInfo }}>
-      {children}
-    </AuthProvider.Provider>
+    <AuthProvider.Provider value={authInfo}>{children}</AuthProvider.Provider>
   );
 }
 

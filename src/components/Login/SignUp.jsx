@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 function SignUp() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div
         className="mx-auto h-auto md:h-screen bg-no-repeat bg-cover bg-center bg-fixed "
         style={{

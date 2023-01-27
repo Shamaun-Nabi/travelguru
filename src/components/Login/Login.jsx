@@ -3,8 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthProvider } from "../../contexts/AuthContext";
 function Login() {
-  const { authInfo } = useContext(AuthProvider);
-  const { signInWithGoogle } = authInfo;
+  const { signInWithGoogle } = useContext(AuthProvider);
+
   return (
     <>
       <div className="mx-auto container h-screen md:h-auto ">
